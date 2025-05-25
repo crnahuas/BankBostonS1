@@ -22,7 +22,7 @@ public class CuentaCorriente {
         return saldo;
     }
 
-    // Depositar dinero en la cuenta
+    // Depositar dinero
     public void depositar(int monto) {
         if (monto > 0) {
             saldo += monto;
@@ -33,7 +33,7 @@ public class CuentaCorriente {
         }
     }
 
-    // Girar dinero de la cuenta
+    // Girar dinero
     public void girar(int monto) {
         if (monto <= 0) {
             System.out.println("El monto a girar debe ser mayor que cero.");
@@ -46,7 +46,7 @@ public class CuentaCorriente {
         }
     }
 
-    // Consultar el saldo actual
+    // Consultar el saldo
     public void consultarSaldo() {
         System.out.println("Saldo actual: $" + saldo + " pesos.");
     }
