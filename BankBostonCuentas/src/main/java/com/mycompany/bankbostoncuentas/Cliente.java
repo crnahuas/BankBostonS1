@@ -1,6 +1,8 @@
 package com.mycompany.bankbostoncuentas;
 
+// Representa a un cliente del banco. Contiene datos personales, dirección, teléfono y su cuenta corriente.
 public class Cliente {
+
     private String rut;
     private String nombre;
     private String apellidoPaterno;
@@ -11,8 +13,9 @@ public class Cliente {
     private String telefono;
     private CuentaCorriente cuenta;
 
+    // Constructor
     public Cliente(String rut, String nombre, String apellidoPaterno, String apellidoMaterno,
-                   String domicilio, String comuna, String region, String telefono) {
+            String domicilio, String comuna, String region, String telefono) {
         if (rut == null || !validarRut(rut)) {
             throw new IllegalArgumentException("RUT inválido.");
         }
@@ -49,11 +52,7 @@ public class Cliente {
         this.cuenta = new CuentaCorriente(); // número de cuenta se genera automático
     }
 
-    // Limpia el RUT (quita puntos y pone mayúscula la K si existe)
-    private String limpiarRut(String rut) {
-        return rut.replace(".", "").toUpperCase();
-    }
-
+    // Getter
     public String getRut() {
         return rut;
     }
@@ -62,6 +61,7 @@ public class Cliente {
         return cuenta;
     }
 
+    // Validar RUT
     public static boolean validarRut(String rut) {
         if (rut == null || rut.isEmpty()) {
             return false;
@@ -98,13 +98,20 @@ public class Cliente {
         return dv == dvEsperado;
     }
 
+    private String limpiarRut(String rut) {
+        return rut.replace(".", "").toUpperCase();
+    }
+
+    // Validar Teléfono
     public static boolean validarTelefono(String telefono) {
-        // Validar que sea 9 dígitos y empiece por 9 o 2
-        if (telefono == null) return false;
+        if (telefono == null) {
+            return false;
+        }
         String tel = telefono.trim();
         return tel.matches("^(9\\d{8}|2\\d{7})$");
     }
-
+    
+    // Datos Cliente
     public void mostrarDatos() {
         System.out.println("Datos del cliente:");
         System.out.println("RUT: " + rut);

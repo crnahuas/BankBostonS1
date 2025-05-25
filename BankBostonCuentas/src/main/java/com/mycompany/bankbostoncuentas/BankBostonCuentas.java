@@ -39,7 +39,7 @@ public class BankBostonCuentas {
                         } else if (buscarClientePorRut(clientes, rut) != null) {
                             System.out.println("El RUT ya está registrado. Intente con otro.");
                         } else {
-                            break; // RUT válido y no registrado
+                            break;
                         }
                     } while (true);
 
@@ -161,7 +161,7 @@ public class BankBostonCuentas {
         } while (opcion != 6);
     }
 
-    // Método auxiliar para buscar cliente por RUT
+    // Buscar cliente por RUT
     private static Cliente buscarClientePorRut(ArrayList<Cliente> clientes, String rut) {
         String rutBuscar = rut.replace(".", "").toUpperCase();
         for (Cliente c : clientes) {

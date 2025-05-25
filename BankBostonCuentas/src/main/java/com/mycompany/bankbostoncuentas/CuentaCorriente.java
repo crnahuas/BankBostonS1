@@ -7,11 +7,13 @@ public class CuentaCorriente {
     private int numeroCuenta;
     private int saldo;
 
+    // Constructor
     public CuentaCorriente() {
         this.numeroCuenta = contadorCuentas++;
         this.saldo = 0; // saldo inicial
     }
-
+    
+    // Getter
     public int getNumeroCuenta() {
         return numeroCuenta;
     }
@@ -20,7 +22,7 @@ public class CuentaCorriente {
         return saldo;
     }
 
-    // Método para depositar dinero en la cuenta
+    // Depositar dinero en la cuenta
     public void depositar(int monto) {
         if (monto > 0) {
             saldo += monto;
@@ -31,7 +33,7 @@ public class CuentaCorriente {
         }
     }
 
-    // Método para girar (retirar) dinero de la cuenta
+    // Girar dinero de la cuenta
     public void girar(int monto) {
         if (monto <= 0) {
             System.out.println("El monto a girar debe ser mayor que cero.");
@@ -44,7 +46,7 @@ public class CuentaCorriente {
         }
     }
 
-    // Método para consultar el saldo actual
+    // Consultar el saldo actual
     public void consultarSaldo() {
         System.out.println("Saldo actual: $" + saldo + " pesos.");
     }
